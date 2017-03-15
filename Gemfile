@@ -17,10 +17,14 @@ gem 'therubyracer', platforms: :ruby
 
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'twitter-bootstrap-rails'
 
 # Data
 gem 'faker'
 gem 'factory_girl_rails'
+
+# Auths
+gem 'devise'
 
 group :development, :test do
   gem 'byebug'
