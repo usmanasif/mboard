@@ -1,0 +1,15 @@
+.col-lg-8
+  %h1= @post.title
+  %p.lead
+    = t('posts.posted_by')
+    %a(href="#{posts_path(author_id: @post.author.id)}")
+      = @post.author.name
+  %hr
+  %p
+    %span.fa.fa-clock-o
+    = t('posts.posted_on')
+    = format_full_date @post
+
+  %p.lead= "#{@post.body[0..20]}..."
+  %p= @post.body
+  %hr

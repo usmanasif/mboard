@@ -10,3 +10,15 @@
     user.password_confirmation = 'pass123456'
   end
 end
+
+if Post.count < 1
+  u = User.first
+
+  10.times do |i|
+    Post.create({
+      title: Faker::Lorem.words.join(' '),
+      body: Faker::Lorem.paragraph(40),
+      author_id: u.id
+    })
+  end
+end

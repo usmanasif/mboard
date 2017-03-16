@@ -7,12 +7,14 @@ gem 'rails', '4.2.8'
 gem 'pg', '~> 0.15'
 gem 'puma'
 gem 'figaro'
+gem 'bootstrap-will_paginate'
 
 # Front-end
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'haml'
+gem 'haml-rails'
 gem 'therubyracer', platforms: :ruby
 
 gem 'jquery-rails'

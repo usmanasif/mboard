@@ -1,0 +1,27 @@
+.well.post
+  .media
+    %a.pull-left(href="#{post_path(post)}")
+      %img.media-object(src="https://dummyimage.com/100x100/cdcdcd/ffffff.png&text=#{post.author.initials}")
+    .media-body
+      %h4.media-heading= post.title
+      %p= "#{post.body[0..50].strip}..."
+
+      %ul.list-inline.list-unstyled.post-stats
+        %li
+          %span
+            %i.fa.fa-user
+            = post.author.name
+        %li= '|'
+        %li
+          %span(title="#{post.created_at}")
+            %i.fa.fa-clock-o
+            = time_ago_in_words post.created_at
+        %li= '|'
+        %li
+          %span
+            %i.fa.fa-comment
+            0 #{t('posts.comments')}
+        %li= '|'
+        %li
+          %span
+            = link_to t('posts.read_more'), post
