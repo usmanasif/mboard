@@ -6,6 +6,8 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'devise'
+require 'capybara/rspec'
+require 'capybara/poltergeist'
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -61,5 +63,9 @@ RSpec.configure do |config|
   config.include(Shoulda::Matchers::ActiveRecord, type: :model)
   config.include Devise::TestHelpers, type: :controller
   config.extend ControllerMacros, type: :controller
-end
+  config.include Warden::Test::Helpers, type: :feature
 
+  config.after :each do
+    Warden.test_reset!
+  end
+end

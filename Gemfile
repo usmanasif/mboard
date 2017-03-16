@@ -33,6 +33,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'shoulda-callback-matchers', '~> 1.1.1'
+  gem 'capybara'
+  gem 'poltergeist'
 end
 
 group :development do
