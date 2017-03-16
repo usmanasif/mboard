@@ -1,0 +1,8 @@
+.media.comment
+  %a.pull-left(src="#{posts_path(author_id: comment.author.id)}")
+    %img.media-object(src="https://dummyimage.com/64x64/cdcdcd/ffffff.png&text=#{comment.author.initials}")
+  .media-body
+    %h4.media-heading
+      = comment.author.name
+      %small= format_full_date comment
+    = comment.body

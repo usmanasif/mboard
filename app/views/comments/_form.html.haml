@@ -1,0 +1,13 @@
+.well.comment
+  %h4= t('comments.new')
+  = form_for [post, comment] do |f|
+    - if comment.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(comment.errors.count, "error")}:"
+        %ul
+          - comment.errors.full_messages.each do |msg|
+            %li= msg
+    .form-group
+      = f.text_area :body, rows: 3, class: 'form-control'
+
+    = f.submit t('comments.submit'), class: 'btn btn-primary'

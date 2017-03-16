@@ -6,6 +6,11 @@ en:
   app:
     name: MBoard
 
+  comments:
+    new: 'Leave a Comment:'
+    require_login: You must be logged in to comment...
+    submit: Submit
+
   navbar:
     back: Back
     new_post: New post

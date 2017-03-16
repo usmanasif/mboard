@@ -12,4 +12,14 @@
 
   %p.lead= "#{@post.body[0..20]}..."
   %p= @post.body
+
   %hr
+  = render @comments
+
+  %hr
+  - if user_signed_in?
+    = render 'comments/form', post: @post, comment: @comment
+
+  - else
+    .well
+      %p= t('comments.require_login')

@@ -14,10 +14,13 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe 'GET #show' do
-    it 'assigns the requested post as @post' do
+    it 'assigns the requested post as @post, posts.comments as @comments and a new comment as @comment' do
       post = Post.create! valid_attributes
       get :show, { id: post.to_param }
+
       expect(assigns(:post)).to eq(post)
+      expect(assigns(:comments)).to eq(post.comments)
+      expect(assigns(:comment)).to be_a_new(Comment)
     end
   end
 

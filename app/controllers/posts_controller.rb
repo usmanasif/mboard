@@ -8,6 +8,8 @@ class PostsController < ApplicationController
 
   def show
     @post = post
+    @comment = Comment.new
+    @comments = post.comments.includes(:author).to_a
   end
 
   def new
